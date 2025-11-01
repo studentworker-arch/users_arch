@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from services.user_service import UserService
 from repositories.postgres_user_repo import PostgresUserRepository
-
+#
 app = Flask(__name__)
 
 # Инициализация зависимостей
