@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg
 from psycopg2.extras import RealDictCursor
 from typing import List, Optional
 from models.user import User
@@ -10,7 +10,7 @@ class PostgresUserRepository(UserRepository):
         self.connection_params = DATABASE_URL
 
     def _get_connection(self):
-        return psycopg2.connect(self.connection_params)
+        return psycopg.connect(self.connection_params)
 
     def create_user(self, name: str, email: str) -> User:
         with self._get_connection() as conn:
